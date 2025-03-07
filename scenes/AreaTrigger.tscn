@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4446f8rn3nrn"]
+
+[ext_resource type="Script" path="res://scenes/LoseCondition.gd" id="1_lvymy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aclh"]
+size = Vector2(92, 109)
+
+[node name="AreaTrigger" type="Area2D"]
+script = ExtResource("1_lvymy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_8aclh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
